@@ -1,3 +1,7 @@
+// Name: Aditya Nilakanth chakre.
+// Batch: 25048.
+// UserId: adityachakre123@gmail.com
+
 #include <stdio.h>
 #include <string.h>
 #include "addressbook.h"
@@ -9,8 +13,6 @@ int main()
 	struct AddressBook addressBook;
 	addressBook.contactCount = 0;
 	addressBook.ir_size = 0;
-
-	// printf("%zu\n", sizeof(addressBook));
 
 	// loading all the existing contacts in the database. Before performing anyother operation.
 	loadContacts(&addressBook);
