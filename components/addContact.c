@@ -12,16 +12,16 @@ void add_contact(struct AddressBook *addressBook)
     int isPresent2 = 0;
 
     // Taking user input for the name.
-    printf("\n\nPlease enter your name: \n");
+    printf("\n\nPlease enter your name:\n");
     inputName(tempName);
 
     // Taking user input for the number.
-    printf("\n\nPlease enter the mobile number: \n");
+    printf("\n\nPlease enter the mobile number:\n");
     inputPhone(tempPhone);
 
     // Taking user input for the email.
     printf("\n\nEnter your email address:\n");
-    printf("\nEmail instructions:\n1) Only lower case letters\n2) No numbers after @ symbol\n3) No use of _ or -\n4) No use of any other symbol.\n");
+    printf("\nEmail instructions:\n1) Only lowercase letters\n2) No numbers after @ symbol\n3) No use of _ or -\n4) No use of any other symbols.\n");
     inputEmail(tempEmail);
 
     // Checking in the database before adding to avoid duplicate entries.
@@ -43,12 +43,12 @@ void add_contact(struct AddressBook *addressBook)
         }
     }
     else if (!isPresent1)
-        printf("\n\nDuplicate Phone Number!!\n");
+        printf("\n\nDuplicate phone number!!\n");
     else if (!isPresent2)
-        printf("\n\nDuplicate Email!!\n");
+        printf("\n\nDuplicate email!!\n");
 }
 
-// Additional functions....
+// All Input functions....
 
 void inputName(char *tempName)
 {
@@ -63,7 +63,7 @@ void inputName(char *tempName)
         if (verified)
             break;
 
-        printf("\nInvalid name. Enter name again.\n");
+        printf("\nInvalid name. Enter the name again.\n");
     }
 }
 
@@ -95,6 +95,6 @@ void inputEmail(char *tempEmail)
         if (verified)
             break;
 
-        printf("\nInvalid email format. Enter again: \n");
+        printf("\nInvalid email format. Enter again:\n");
     }
 }

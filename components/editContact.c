@@ -10,19 +10,20 @@ void clearBuffer();
 
 void edit_contact(struct AddressBook *addressBook)
 {
-    // used to search contact and find if the information they want to edit is actually present or not?
+    // Used to search for a contact and find if the information they want to edit is actually present or not?
     search_contact(addressBook);
 
     if (addressBook->ir_size == 0)
         return;
+
     printf("\nEnter new name:\n");
     inputName(newName);
 
-    printf("\nEnter new Phone number:\n");
+    printf("\nEnter new phone number:\n");
     inputPhone(newPhone);
 
-    printf("\nEnter new email: \n");
-    printf("\nEmail instructions:\n1) Only lower case letters\n2) No numbers after @ symbol\n3) No use of _ or -\n4) No use of any other symbol.\n");
+    printf("\nEnter new email:\n");
+    printf("\nEmail instructions:\n1) Only lowercase letters\n2) No numbers after @ symbol\n3) No use of _ or -\n4) No use of any other symbols.\n");
     inputEmail(newEmail);
 
     if (addressBook->ir_size == 1)
@@ -31,7 +32,7 @@ void edit_contact(struct AddressBook *addressBook)
     }
     else
     {
-        printf("\nEnter the index of contact which you want to edit.\n");
+        printf("\nEnter the index of the contact which you want to edit.\n");
         int index = getIndex(addressBook);
         saveToContacts(addressBook, index - 1);
     }
@@ -54,7 +55,7 @@ int getIndex(struct AddressBook *addressBook)
             break;
         }
 
-        printf("Out of range. Try again.\n");
+        printf("Selection out of range. Try again.\n");
         clearBuffer();
     }
 }
@@ -85,9 +86,9 @@ void saveToContacts(struct AddressBook *addressBook, int index)
         strcpy(addressBook->contacts[addressBook->index_record[index]].email, newEmail);
     }
     else if (!isPresent1)
-        printf("\n\nYou are trying to enter the duplicate Phone Number!!\n");
+        printf("\n\nYou are trying to enter a duplicate phone number!!\n");
     else if (!isPresent2)
-        printf("\n\nYou are trying to enter the duplicate Email!!\n");
+        printf("\n\nYou are trying to enter a duplicate email!!\n");
 }
 
 void clearBuffer()

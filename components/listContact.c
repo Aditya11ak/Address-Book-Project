@@ -3,11 +3,18 @@
 
 void list_contacts(struct AddressBook *addressBook)
 {
-    // listing all the contacts which are there in the array.
-    printf("\nList of all the contacts is: \n");
+    // Listing all the contacts which are there in the array.
+    printf("\nList of all the contacts is:\n\n");
 
-    for (int i = 0; i < addressBook->contactCount; i++)
+    if (addressBook->contactCount == 0)
     {
-        printf(" %s | %s | %s\n", addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
+        printf("\nNo contacts are available to show!\n");
+    }
+    else
+    {
+        for (int i = 0; i < addressBook->contactCount; i++)
+        {
+            printf("%-50s | %-10s | %-50s\n", addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
+        }
     }
 }

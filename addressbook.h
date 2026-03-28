@@ -24,7 +24,7 @@ void edit_contact(struct AddressBook *addressBook);
 void delete_contact(struct AddressBook *addressBook);
 void list_contacts(struct AddressBook *addressBook);
 
-// additional functions which are used for simplicity.
+// Additional functions which are used for simplicity.
 void loadContacts(struct AddressBook *addressBook);
 void saveAllContactsToDataBase(struct AddressBook *addressBook);
 int searchForDuplicate(struct AddressBook *addressBook, char *str);

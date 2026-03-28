@@ -8,9 +8,9 @@ void delete_contact(struct AddressBook *addressBook)
 
     int choice = 0;
 
-    printf("\n\u2757\u2757 Danger Zone!!!  \u2757\u2757\n\n");
-    printf("\nIf you dont want to delete anything then you can enter 2 and exit the Danger Zone!! \n");
-    printf("\nIf you really want to delete something then enter 1\n");
+    printf("\n\u2757\u2757 Danger Zone!!!  \u2757\u2757\n");
+    printf("\nIf you don't want to delete anything, enter 2 and exit the Danger Zone!! \n");
+    printf("\nIf you want to delete something, then enter 1\n");
 
     do
     {
@@ -30,18 +30,18 @@ void delete_contact(struct AddressBook *addressBook)
             }
             else
             {
-                printf("\nEnter the index of contact which you want to \u2757\u2757 DELETE \u2757\u2757\n");
+                printf("\nEnter the index of the contact which you want to \u2757\u2757 DELETE \u2757\u2757\n");
                 int index = getIndex(addressBook);
                 deleteContactPermanantly(addressBook, index - 1);
             }
             return;
 
         case 2:
-            printf("\n\u2757\u2757 Danger Zone!!!  \u2757\u2757 Exited Successfully!\n");
+            printf("\n\u2757\u2757 Danger Zone!!!  \u2757\u2757 Exit Successful!\n");
             break;
 
         default:
-            printf("\nYou have entered Invalid input try again!!\n");
+            printf("\nYou have entered Invalid input. Try again!!\n");
         }
 
         while (getchar() != '\n')

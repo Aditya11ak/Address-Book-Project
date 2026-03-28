@@ -1,8 +1,6 @@
 #include <string.h>
 #include "../addressbook.h"
 
-// TODO: Before adding to the array of the struct we have to check for duplicates in array not into the database.
-
 int searchForDuplicate(struct AddressBook *addressBook, char *str)
 {
 
@@ -24,12 +22,12 @@ int searchForDuplicate(struct AddressBook *addressBook, char *str)
 
             if (strcmp(addressBook->contacts[i].phone, str) == 0)
             {
-                // duplicate entry found return 0
+                // Duplicate entry found, return 0
                 return 0;
             }
         }
 
-        // no duplicate entry present.
+        // No duplicate entry present.
         return 1;
     }
     else
@@ -39,12 +37,12 @@ int searchForDuplicate(struct AddressBook *addressBook, char *str)
 
             if (strcmp(addressBook->contacts[i].email, str) == 0)
             {
-                // duplicate entry found return 0
+                // Duplicate entry found, return 0
                 return 0;
             }
         }
 
-        // no duplicate entry present.
+        // No duplicate entry present.
         return 1;
     }
 }

@@ -1,9 +1,8 @@
-// Name: Aditya Nilakanth chakre.
+// Name: Aditya N. Chakre.
 // Batch: 25048.
 // UserId: adityachakre123@gmail.com
 
 #include <stdio.h>
-#include <string.h>
 #include "addressbook.h"
 
 int main()
@@ -14,7 +13,7 @@ int main()
 	addressBook.contactCount = 0;
 	addressBook.ir_size = 0;
 
-	// loading all the existing contacts in the database. Before performing anyother operation.
+	// Loading all the existing contacts in the database before performing any other operation.
 	loadContacts(&addressBook);
 
 	do
@@ -29,6 +28,8 @@ int main()
 		printf("Enter your choice: ");
 
 		scanf("%d", &choice);
+
+		// Made ir_size = 0 as we will be reusing the index_record multiple times, for every main function.
 		addressBook.ir_size = 0;
 
 		switch (choice)
