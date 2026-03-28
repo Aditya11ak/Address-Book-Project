@@ -57,38 +57,45 @@ void search_contact(struct AddressBook *addressBook)
         return;
     }
     // Checking the availability of the data in the Contacts array.
-    int count = 1;
-    for (int i = 0; i < addressBook->contactCount; i++)
+    if (addressBook->contactCount == 0)
     {
-        if (strstr(addressBook->contacts[i].name, str) != NULL ||
-            strstr(addressBook->contacts[i].phone, str) != NULL ||
-            strstr(addressBook->contacts[i].email, str) != NULL)
-        {
-            printf("\n[%d] Contact found:\n", count++);
-            printf("Name: %s\n", addressBook->contacts[i].name);
-            printf("Phone: %s\n", addressBook->contacts[i].phone);
-            printf("Email: %s\n", addressBook->contacts[i].email);
-
-            // Storing the index of the contact in case the user called the search_contact function for editing or deleting the contact.
-            if (addressBook->ir_size < 100)
-            {
-                addressBook->index_record[addressBook->ir_size] = i;
-                addressBook->ir_size++;
-            }
-
-            found = 1;
-        }
+        printf("\nThere is no entry in the database to search !");
     }
-
-    // This was added to see how index_record holds the index of the actual data.
-    // Also how it helps us to change the data when multiple entries are present with same name.
-    // for (int i = 0; i < addressBook->ir_size; i++)
-    // {
-    //     printf("%d -> %d\n", i, addressBook->index_record[i]);
-    // }
-
-    if (found == 0)
+    else
     {
-        printf("\nEntry with the given information %s not found!!", str);
+        int count = 1;
+        for (int i = 0; i < addressBook->contactCount; i++)
+        {
+            if (strstr(addressBook->contacts[i].name, str) != NULL ||
+                strstr(addressBook->contacts[i].phone, str) != NULL ||
+                strstr(addressBook->contacts[i].email, str) != NULL)
+            {
+                printf("\n[%d] Contact found:\n", count++);
+                printf("Name: %s\n", addressBook->contacts[i].name);
+                printf("Phone: %s\n", addressBook->contacts[i].phone);
+                printf("Email: %s\n", addressBook->contacts[i].email);
+
+                // Storing the index of the contact in case the user called the search_contact function for editing or deleting the contact.
+                if (addressBook->ir_size < 100)
+                {
+                    addressBook->index_record[addressBook->ir_size] = i;
+                    addressBook->ir_size++;
+                }
+
+                found = 1;
+            }
+        }
+
+        // This was added to see how index_record holds the index of the actual data.
+        // Also how it helps us to change the data when multiple entries are present with same name.
+        // for (int i = 0; i < addressBook->ir_size; i++)
+        // {
+        //     printf("%d -> %d\n", i, addressBook->index_record[i]);
+        // }
+
+        if (found == 0)
+        {
+            printf("\nEntry with the given information %s not found!!", str);
+        }
     }
 }
