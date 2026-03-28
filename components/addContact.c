@@ -30,7 +30,7 @@ void add_contact(struct AddressBook *addressBook)
 
     if (isPresent1 && isPresent2)
     {
-        if (addressBook->contactCount > 100)
+        if (addressBook->contactCount >= 100)
         {
             printf("\nThe Address Book is full!!\n");
         }
@@ -72,7 +72,7 @@ void inputPhone(char *tempPhone)
     while (1)
     {
 
-        scanf(" %49[^\n]", tempPhone);
+        scanf(" %14[^\n]", tempPhone);
 
         int verified = validatePhone(tempPhone);
 

@@ -4,6 +4,9 @@
 // name validation logic is present here to see weather the entered name is valid or not.
 int validateName(char *tempName)
 {
+    if (strlen(tempName) == 0)
+        return 0;
+
     for (int i = 0; i < strlen(tempName); i++)
     {
         // Checks for invalid characters

@@ -13,7 +13,7 @@ void search_contact(struct AddressBook *addressBook)
     int found = 0;
     int valid = -1;
 
-        printf("\nYou can enter partial name or Full mobile number and email to search contact:\n");
+    printf("\nYou can enter partial name or Full mobile number and email to search contact:\n");
     printf("\nFor phone number, only digits allowed! \n");
     printf("\nEmail instructions:\n1) Only lowercase letters\n2) No numbers after @ symbol\n3) No use of _ or -\n4) No use of any other symbol.\n");
 
@@ -70,9 +70,12 @@ void search_contact(struct AddressBook *addressBook)
             printf("Email: %s\n", addressBook->contacts[i].email);
 
             // Storing the index of the contact in case the user called the search_contact function for editing or deleting the contact.
+            if (addressBook->ir_size < 100)
+            {
+                addressBook->index_record[addressBook->ir_size] = i;
+                addressBook->ir_size++;
+            }
 
-            addressBook->index_record[addressBook->ir_size] = i;
-            addressBook->ir_size++;
             found = 1;
         }
     }

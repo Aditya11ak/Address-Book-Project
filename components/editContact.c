@@ -58,6 +58,8 @@ int getIndex(struct AddressBook *addressBook)
         printf("Selection out of range. Try again.\n");
         clearBuffer();
     }
+
+    return index;
 }
 
 void saveToContacts(struct AddressBook *addressBook, int index)

@@ -32,4 +32,6 @@ void loadContacts(struct AddressBook *addressBook)
         strcpy(addressBook->contacts[addressBook->contactCount].email, email);
         addressBook->contactCount++;
     }
+
+    fclose(fp);
 }
