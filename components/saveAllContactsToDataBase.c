@@ -16,7 +16,6 @@ void saveAllContactsToDataBase(struct AddressBook *addressBook)
         char *phone = addressBook->contacts[i].phone;
         char *email = addressBook->contacts[i].email;
         fprintf(fp, "%s,%s,%s\n", name, phone, email);
-        // printf("Added: %s,%s,%s\n", name, phone, email);
     }
 
     fclose(fp);
